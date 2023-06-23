@@ -4,6 +4,11 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import clientRoutes from "./Routes/client";
+import generalRoutes from "./Routes/general";
+import managementRoutes from "./Routes/management";
+import salesRoutes from "./Routes/sales";
+
 //Configuration
 
 dotenv.config();
@@ -13,7 +18,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-
 //Routes
 
-app.use
+app.use("/client,clientRoutes");
+app.use("/general,generalRoutes");
+app.use("/management,managementRoutes");
+app.use("/sales,salesRoutes");
