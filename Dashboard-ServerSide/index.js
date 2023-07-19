@@ -33,13 +33,15 @@ router.use("/sales", salesRoutes);
 
 //Mongoose SetUp
 
-const PORT = process.env.PORT || 9000;
+const port = process.env.PORT || 9000;
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => {
-    app.listen(PORT, () => console.log(`Server Running at: ${PORT}`));
+    app.listen(port, () =>
+      console.log(`Server Running at: http://localhost:${port}`)
+    );
   })
   .catch((error) => console.log(`${error} did not connect`));
